@@ -116,8 +116,8 @@ JOIN departments d
 ON d_e.dept_num = d.dept_num;
 
 -- 5. List first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
-SELECT e.first_name, e.last_name, e.sex
-FROM employees e
+SELECT first_name, last_name, sex
+FROM employees
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%'
 
@@ -142,8 +142,7 @@ WHERE d.dept_name = 'Sales'
 OR d.dept_name = 'Development';
 
 -- 8. List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
-SELECT last_name,
-COUNT(last_name) AS "frequency_counts"
+SELECT last_name, COUNT(last_name) AS "frequency_counts"
 FROM employees
 GROUP BY last_name
 ORDER BY
